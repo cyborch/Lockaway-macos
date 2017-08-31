@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="84W-Hr-mHa">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="S9E-PN-TWZ">
+            <objects>
+                <windowController id="84W-Hr-mHa" sceneMemberID="viewController">
+                    <window key="window" title="Pair Phone" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7sG-Ns-S06">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="367"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                    </window>
+                    <connections>
+                        <segue destination="71y-Ka-NXb" kind="relationship" relationship="window.shadowedContentViewController" id="X6J-r0-NZy"/>
+                    </connections>
+                </windowController>
+                <customObject id="gZS-dQ-BBm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="57.5"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="dYB-VG-xNe">
+            <objects>
+                <viewController title="Pair" id="71y-Ka-NXb" customClass="PairController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="qgX-bI-f3h" customClass="PairView" customModule="Lockaway" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-f4-xAo">
+                                <rect key="frame" x="154" y="115" width="224" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="fy3-86-AdS"/>
+                                    <constraint firstAttribute="height" constant="206" id="z1K-oG-4jf"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Connect" id="uZf-9E-CUM"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-VP-Sn3">
+                                <rect key="frame" x="18" y="119" width="462" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="458" id="nJd-zz-bKu"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="To lock your Mac directly from your iPhone or Apple Watch, launch the Lockaway mobile app to start pairing your devices." id="9UJ-k9-JRj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="80l-Y5-Ksp">
+                                <rect key="frame" x="282" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="TJQ-dn-Qqz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Get the app" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cSY-f2-aEX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openAppStoreUrl:" target="71y-Ka-NXb" id="eP6-pQ-Mic"/>
+                                </connections>
+                            </button>
+                            <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-FL-8Xv">
+                                <rect key="frame" x="34" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="X9c-vh-sXN"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Check for devices" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="pG3-h2-tEA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="checkForDevices:" target="71y-Ka-NXb" id="VgY-wJ-z2a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="80l-Y5-Ksp" secondAttribute="bottom" constant="40" id="1n7-EV-QXT"/>
+                            <constraint firstItem="jqf-f4-xAo" firstAttribute="top" secondItem="qgX-bI-f3h" secondAttribute="top" constant="46" id="AwS-6e-dvC"/>
+                            <constraint firstAttribute="bottom" secondItem="H6e-FL-8Xv" secondAttribute="bottom" constant="40" id="I0L-vb-awS"/>
+                            <constraint firstItem="6Nc-VP-Sn3" firstAttribute="top" secondItem="qgX-bI-f3h" secondAttribute="top" constant="214" id="Iax-Yo-Pb0"/>
+                            <constraint firstItem="6Nc-VP-Sn3" firstAttribute="leading" secondItem="qgX-bI-f3h" secondAttribute="leading" constant="20" id="SwZ-kM-jJO"/>
+                            <constraint firstAttribute="trailing" secondItem="80l-Y5-Ksp" secondAttribute="trailing" constant="40" id="mLt-Ti-8cg"/>
+                            <constraint firstItem="H6e-FL-8Xv" firstAttribute="leading" secondItem="qgX-bI-f3h" secondAttribute="leading" constant="40" id="oOv-in-BV4"/>
+                            <constraint firstItem="jqf-f4-xAo" firstAttribute="leading" secondItem="qgX-bI-f3h" secondAttribute="leading" constant="154" id="wY7-Wi-SNT"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="controller" destination="71y-Ka-NXb" id="jtg-NN-NHM"/>
+                            <outlet property="getButton" destination="80l-Y5-Ksp" id="oKR-i6-gSW"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="delegate" destination="BPY-SJ-9kM" id="VQ7-gi-6zX"/>
+                        <outlet property="scanButton" destination="H6e-FL-8Xv" id="JjN-Hm-cw3"/>
+                        <segue destination="rv9-Cu-nS8" kind="custom" identifier="Found" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="EVC-21-rtS"/>
+                    </connections>
+                </viewController>
+                <customObject id="Z8r-SC-ZHI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="BPY-SJ-9kM" customClass="PairDelegate" customModule="Lockaway" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="71y-Ka-NXb" id="zLE-5k-qA8"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="654" y="51"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="vnV-iv-rns">
+            <objects>
+                <customObject id="Dle-Ts-OhL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Pair" id="rv9-Cu-nS8" customClass="FoundController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Vub-1N-5Sc" customClass="FoundView" customModule="Lockaway" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lof-hr-oOt">
+                                <rect key="frame" x="18" y="99" width="462" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="458" id="IzX-Mm-ZxV"/>
+                                </constraints>
+                                <textFieldCell key="cell" controlSize="mini" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="AG9-Je-vGy">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">The closest iPhone is named “iPhone”
+Do you want to pair this phone and automatically
+lock your computer when it isn’t nearby?</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VuZ-Yf-ATY">
+                                <rect key="frame" x="34" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="cSL-lE-jQG"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Yes" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sne-ix-gN8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="yes:" target="rv9-Cu-nS8" id="FiA-dg-4rn"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FD0-8e-qzP">
+                                <rect key="frame" x="282" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Ygg-KY-rJj"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="No" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ylL-fO-FGz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="no:" target="rv9-Cu-nS8" id="CUE-mr-oUj"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EiB-vy-gny">
+                                <rect key="frame" x="148" y="133" width="203" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="DcI-nr-x7a"/>
+                                    <constraint firstAttribute="width" constant="203" id="zUW-yH-hc9"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="iPhone" id="Fh1-Zv-jQX"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EiB-vy-gny" firstAttribute="centerX" secondItem="Vub-1N-5Sc" secondAttribute="centerX" id="Act-Lc-D3j"/>
+                            <constraint firstAttribute="bottom" secondItem="VuZ-Yf-ATY" secondAttribute="bottom" constant="40" id="F6W-Gu-vyx"/>
+                            <constraint firstAttribute="bottom" secondItem="FD0-8e-qzP" secondAttribute="bottom" constant="40" id="G7O-7i-my7"/>
+                            <constraint firstItem="VuZ-Yf-ATY" firstAttribute="leading" secondItem="Vub-1N-5Sc" secondAttribute="leading" constant="40" id="Hjf-sz-zeI"/>
+                            <constraint firstItem="lof-hr-oOt" firstAttribute="top" secondItem="Vub-1N-5Sc" secondAttribute="top" constant="217" id="sEG-Fs-izd"/>
+                            <constraint firstAttribute="trailing" secondItem="lof-hr-oOt" secondAttribute="trailing" constant="20" id="sNC-IL-dOb"/>
+                            <constraint firstItem="lof-hr-oOt" firstAttribute="leading" secondItem="Vub-1N-5Sc" secondAttribute="leading" constant="20" id="u2M-OX-Kxj"/>
+                            <constraint firstItem="EiB-vy-gny" firstAttribute="top" secondItem="Vub-1N-5Sc" secondAttribute="top" constant="65" id="vzZ-y3-Rha"/>
+                            <constraint firstAttribute="trailing" secondItem="FD0-8e-qzP" secondAttribute="trailing" constant="40" id="xsR-QV-XPp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="delegate" destination="6Kb-5w-tyR" id="NpM-tX-Ksy"/>
+                        <outlet property="noButton" destination="FD0-8e-qzP" id="58e-rU-Anx"/>
+                        <outlet property="question" destination="lof-hr-oOt" id="zhw-iC-a2N"/>
+                        <segue destination="WZo-cl-PWj" kind="custom" identifier="Success" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="Cby-uj-cZp"/>
+                    </connections>
+                </viewController>
+                <customObject id="6Kb-5w-tyR" customClass="FoundDelegate" customModule="Lockaway" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="rv9-Cu-nS8" id="EQD-5u-njk"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1263" y="51"/>
+        </scene>
+        <!--Success Controller-->
+        <scene sceneID="t6L-K6-Drc">
+            <objects>
+                <viewController id="WZo-cl-PWj" customClass="SuccessController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Hxl-bS-f7E" customClass="SuccessView" customModule="Lockaway" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZw-8N-Ocd">
+                                <rect key="frame" x="164" y="151" width="171" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="mCi-uw-Qw8"/>
+                                    <constraint firstAttribute="height" constant="167" id="ug8-In-9Bw"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Lockaway" id="5go-J8-sAh"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt7-vg-vzd">
+                                <rect key="frame" x="18" y="92" width="462" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="458" id="z2e-W4-d1R"/>
+                                </constraints>
+                                <textFieldCell key="cell" controlSize="mini" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="u4A-6i-M4q">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Congratulations!
+Next time you walk away from your computer it will automatically
+lock without requiring any interaction from you.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M3U-5k-WVr">
+                                <rect key="frame" x="158" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="IK1-Su-k5S"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="oBs-RP-izj"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oyy-yL-kWf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ok:" target="WZo-cl-PWj" id="9KV-Eb-EeT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QZw-8N-Ocd" firstAttribute="top" secondItem="Hxl-bS-f7E" secondAttribute="top" constant="49" id="73n-HN-bh6"/>
+                            <constraint firstItem="Dt7-vg-vzd" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="GbA-dE-hQC"/>
+                            <constraint firstAttribute="bottom" secondItem="M3U-5k-WVr" secondAttribute="bottom" constant="40" id="LJe-kN-Qga"/>
+                            <constraint firstItem="QZw-8N-Ocd" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="X7N-eG-qay"/>
+                            <constraint firstItem="M3U-5k-WVr" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="fTk-X0-hrU"/>
+                            <constraint firstItem="Dt7-vg-vzd" firstAttribute="top" secondItem="QZw-8N-Ocd" secondAttribute="bottom" constant="8" id="vyu-1F-0p3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="sfW-Zf-Idb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="50.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Connect" width="176" height="164"/>
+        <image name="Lockaway" width="140" height="140"/>
+        <image name="iPhone" width="105" height="185"/>
+    </resources>
+</document>

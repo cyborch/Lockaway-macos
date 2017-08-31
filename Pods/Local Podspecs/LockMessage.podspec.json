@@ -1,0 +1,33 @@
+{
+  "name": "LockMessage",
+  "version": "1.0",
+  "summary": "Mesasges which can be passed between Lockaway peers.",
+  "homepage": "https://lockmessage.cyborch.com",
+  "license": "MIT",
+  "authors": {
+    "Anders Borch": "anders@cyborch.com"
+  },
+  "platforms": {
+    "ios": "10.0",
+    "osx": "10.11"
+  },
+  "source": {
+    "git": "https://github.com/cyborch/LockMessage.git",
+    "tag": "1.0"
+  },
+  "source_files": [
+    "Source/**/*.swift",
+    "Source/**/*.{h,m}"
+  ],
+  "ios": {
+    "source_files": "Phonelock/**/*.{h,m}"
+  },
+  "osx": {
+    "source_files": "Maclock/**/*.{h,m}"
+  },
+  "dependencies": {
+    "Gloss": [
+      "~> 1.2"
+    ]
+  }
+}

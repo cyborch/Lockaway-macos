@@ -1,0 +1,6 @@
+framework module LockMessage {
+  umbrella header "LockMessage-umbrella.h"
+
+  export *
+  module * { export * }
+}
