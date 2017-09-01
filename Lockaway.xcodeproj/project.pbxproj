@@ -32,7 +32,6 @@
 		D69926F41F5496F60056AE4C /* FoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F31F5496F60056AE4C /* FoundController.swift */; };
 		D69926F61F54A2B40056AE4C /* FoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F51F54A2B40056AE4C /* FoundDelegate.swift */; };
 		D69926FB1F54AC700056AE4C /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926FA1F54AC700056AE4C /* SuccessController.swift */; };
-		DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,7 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67484B91F59423600D0CBD0 /* ServiceManagement.framework in Frameworks */,
-				DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */,
 				A3BBEC474882A9A365F68E9F /* Pods_MagicLock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
