@@ -110,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func terminate() {
-        NSApplication.shared().terminate(nil)
+        NSApp.terminate(nil)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
