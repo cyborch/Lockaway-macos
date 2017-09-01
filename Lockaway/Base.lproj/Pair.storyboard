@@ -6,6 +6,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="cSY-NK-pnf">
+            <objects>
+                <viewController id="x0v-kJ-XnD" sceneMemberID="viewController">
+                    <view key="view" id="V6N-ch-tr6" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ShB-YJ-Ae6">
+                                <rect key="frame" x="158" y="33" width="182" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="7lU-hd-d1Q"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="I've done it" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TwU-1L-ukZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="71y-Ka-NXb" kind="custom" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="330-Ta-uxy"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2c-Il-gwa">
+                                <rect key="frame" x="209" y="252" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="GoO-kd-opm"/>
+                                    <constraint firstAttribute="height" constant="80" id="qLR-e5-VLJ"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="SystemPreferences" id="xSi-wU-jg4"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbz-Fa-5Th">
+                                <rect key="frame" x="18" y="196" width="462" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="zb6-VB-AWf">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Firstly, open System Preferences, pick Security &amp; Privacy, and enable
+“Require password immediately after sleep or screensaver begins”</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N4M-KQ-PF7">
+                                <rect key="frame" x="20" y="96" width="458" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="d9a-0y-chq"/>
+                                    <constraint firstAttribute="width" constant="458" id="yus-Wz-vkq"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Settings" id="t9w-bY-AtA"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="w2c-Il-gwa" firstAttribute="centerX" secondItem="V6N-ch-tr6" secondAttribute="centerX" id="7Aa-9s-fBn"/>
+                            <constraint firstAttribute="trailing" secondItem="xbz-Fa-5Th" secondAttribute="trailing" constant="20" id="8KH-b3-QEX"/>
+                            <constraint firstItem="w2c-Il-gwa" firstAttribute="top" secondItem="V6N-ch-tr6" secondAttribute="top" constant="35" id="8T8-rS-sd7"/>
+                            <constraint firstAttribute="bottom" secondItem="ShB-YJ-Ae6" secondAttribute="bottom" constant="40" id="BGc-Od-txK"/>
+                            <constraint firstItem="ShB-YJ-Ae6" firstAttribute="centerX" secondItem="V6N-ch-tr6" secondAttribute="centerX" id="OgP-AX-0hZ"/>
+                            <constraint firstItem="N4M-KQ-PF7" firstAttribute="centerX" secondItem="V6N-ch-tr6" secondAttribute="centerX" id="TWr-ZX-CLp"/>
+                            <constraint firstItem="xbz-Fa-5Th" firstAttribute="top" secondItem="w2c-Il-gwa" secondAttribute="bottom" constant="22" id="bVN-ab-FyT"/>
+                            <constraint firstItem="N4M-KQ-PF7" firstAttribute="top" secondItem="xbz-Fa-5Th" secondAttribute="bottom" constant="26" id="iff-9P-zZ7"/>
+                            <constraint firstItem="xbz-Fa-5Th" firstAttribute="leading" secondItem="V6N-ch-tr6" secondAttribute="leading" constant="20" id="q8x-p5-hU0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="JB8-bu-1kp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="50.5"/>
+        </scene>
         <!--Window Controller-->
         <scene sceneID="S9E-PN-TWZ">
             <objects>
@@ -17,18 +85,18 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="71y-Ka-NXb" kind="relationship" relationship="window.shadowedContentViewController" id="X6J-r0-NZy"/>
+                        <segue destination="x0v-kJ-XnD" kind="relationship" relationship="window.shadowedContentViewController" id="kmC-Zu-Cvd"/>
                     </connections>
                 </windowController>
                 <customObject id="gZS-dQ-BBm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="57.5"/>
+            <point key="canvasLocation" x="-579" y="51"/>
         </scene>
         <!--Controller-->
         <scene sceneID="dYB-VG-xNe">
             <objects>
                 <viewController title="Pair" id="71y-Ka-NXb" customClass="PairController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="qgX-bI-f3h" customClass="PairView" customModule="Lockaway" customModuleProvider="target">
+                    <view key="view" id="qgX-bI-f3h" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -113,7 +181,7 @@
             <objects>
                 <customObject id="Dle-Ts-OhL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Pair" id="rv9-Cu-nS8" customClass="FoundController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Vub-1N-5Sc" customClass="FoundView" customModule="Lockaway" customModuleProvider="target">
+                    <view key="view" id="Vub-1N-5Sc" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -197,7 +265,7 @@ lock your computer when it isn’t nearby?</string>
         <scene sceneID="t6L-K6-Drc">
             <objects>
                 <viewController id="WZo-cl-PWj" customClass="SuccessController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Hxl-bS-f7E" customClass="SuccessView" customModule="Lockaway" customModuleProvider="target">
+                    <view key="view" id="Hxl-bS-f7E" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -268,6 +336,8 @@ DQ
     <resources>
         <image name="Connect" width="176" height="164"/>
         <image name="Lockaway" width="140" height="140"/>
+        <image name="Settings" width="666" height="161"/>
+        <image name="SystemPreferences" width="384" height="384"/>
         <image name="iPhone" width="105" height="185"/>
     </resources>
 </document>

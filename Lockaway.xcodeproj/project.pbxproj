@@ -17,14 +17,13 @@
 		D6239E101F542F140011C42A /* Pair.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6239E0E1F542F140011C42A /* Pair.storyboard */; };
 		D6324AEA1F57665800CD5171 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE81F57665800CD5171 /* Service.swift */; };
 		D6324AEB1F57665800CD5171 /* SocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE91F57665800CD5171 /* SocketDelegate.swift */; };
+		D67484A31F593E1900D0CBD0 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484A21F593E1900D0CBD0 /* BackgroundView.swift */; };
 		D69926C41F5448530056AE4C /* NSButton+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926C31F5448530056AE4C /* NSButton+Status.swift */; };
 		D69926C71F5448E30056AE4C /* PairDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926C61F5448E30056AE4C /* PairDelegate.swift */; };
 		D69926CD1F5451A20056AE4C /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926CC1F5451A20056AE4C /* Data+Hex.swift */; };
 		D69926EF1F5471C70056AE4C /* FadeSeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926EE1F5471C70056AE4C /* FadeSeque.swift */; };
-		D69926F11F5474BD0056AE4C /* FoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F01F5474BD0056AE4C /* FoundView.swift */; };
 		D69926F41F5496F60056AE4C /* FoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F31F5496F60056AE4C /* FoundController.swift */; };
 		D69926F61F54A2B40056AE4C /* FoundDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F51F54A2B40056AE4C /* FoundDelegate.swift */; };
-		D69926F91F54AC580056AE4C /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926F81F54AC580056AE4C /* SuccessView.swift */; };
 		D69926FB1F54AC700056AE4C /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926FA1F54AC700056AE4C /* SuccessController.swift */; };
 		DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */; };
 /* End PBXBuildFile section */
@@ -50,14 +49,13 @@
 		D6324AE81F57665800CD5171 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D6324AE91F57665800CD5171 /* SocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketDelegate.swift; sourceTree = "<group>"; };
 		D67484A11F58D73700D0CBD0 /* Lockaway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lockaway.entitlements; sourceTree = "<group>"; };
+		D67484A21F593E1900D0CBD0 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D69926C31F5448530056AE4C /* NSButton+Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+Status.swift"; sourceTree = "<group>"; };
 		D69926C61F5448E30056AE4C /* PairDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairDelegate.swift; sourceTree = "<group>"; };
 		D69926CC1F5451A20056AE4C /* Data+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
 		D69926EE1F5471C70056AE4C /* FadeSeque.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeSeque.swift; sourceTree = "<group>"; };
-		D69926F01F5474BD0056AE4C /* FoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundView.swift; sourceTree = "<group>"; };
 		D69926F31F5496F60056AE4C /* FoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundController.swift; sourceTree = "<group>"; };
 		D69926F51F54A2B40056AE4C /* FoundDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundDelegate.swift; sourceTree = "<group>"; };
-		D69926F81F54AC580056AE4C /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		D69926FA1F54AC700056AE4C /* SuccessController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +125,7 @@
 				D6239E001F542E870011C42A /* PowerManager */,
 				D6239DF11F542D960011C42A /* AppDelegate.swift */,
 				D69926EE1F5471C70056AE4C /* FadeSeque.swift */,
+				D67484A21F593E1900D0CBD0 /* BackgroundView.swift */,
 				D6239DF51F542D960011C42A /* Assets.xcassets */,
 				D6239DF71F542D960011C42A /* Main.storyboard */,
 				D6239E011F542EAF0011C42A /* Lockaway-Bridging-Header.h */,
@@ -180,7 +179,6 @@
 		D69926F21F54827D0056AE4C /* Found */ = {
 			isa = PBXGroup;
 			children = (
-				D69926F01F5474BD0056AE4C /* FoundView.swift */,
 				D69926F31F5496F60056AE4C /* FoundController.swift */,
 				D69926F51F54A2B40056AE4C /* FoundDelegate.swift */,
 			);
@@ -190,7 +188,6 @@
 		D69926F71F54AC380056AE4C /* Success */ = {
 			isa = PBXGroup;
 			children = (
-				D69926F81F54AC580056AE4C /* SuccessView.swift */,
 				D69926FA1F54AC700056AE4C /* SuccessController.swift */,
 			);
 			name = Success;
@@ -345,8 +342,7 @@
 				D69926F61F54A2B40056AE4C /* FoundDelegate.swift in Sources */,
 				D6239E0D1F542F0B0011C42A /* PairView.swift in Sources */,
 				D69926F41F5496F60056AE4C /* FoundController.swift in Sources */,
-				D69926F91F54AC580056AE4C /* SuccessView.swift in Sources */,
-				D69926F11F5474BD0056AE4C /* FoundView.swift in Sources */,
+				D67484A31F593E1900D0CBD0 /* BackgroundView.swift in Sources */,
 				D69926CD1F5451A20056AE4C /* Data+Hex.swift in Sources */,
 				D6324AEB1F57665800CD5171 /* SocketDelegate.swift in Sources */,
 				D6239E051F542EB00011C42A /* PowerManager.m in Sources */,
@@ -485,6 +481,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lockaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -506,6 +503,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lockaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
