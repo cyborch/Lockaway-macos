@@ -240,14 +240,23 @@ DQ
                                     <action selector="ok:" target="WZo-cl-PWj" id="9KV-Eb-EeT"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="0Tu-fa-86w">
+                                <rect key="frame" x="8" y="12" width="205" height="18"/>
+                                <buttonCell key="cell" type="check" title="Open automatically on startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Mgr-aW-1j2">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="QZw-8N-Ocd" firstAttribute="top" secondItem="Hxl-bS-f7E" secondAttribute="top" constant="49" id="73n-HN-bh6"/>
+                            <constraint firstAttribute="bottom" secondItem="0Tu-fa-86w" secondAttribute="bottom" constant="14" id="9nG-SX-Ptv"/>
                             <constraint firstItem="Dt7-vg-vzd" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="GbA-dE-hQC"/>
                             <constraint firstAttribute="bottom" secondItem="M3U-5k-WVr" secondAttribute="bottom" constant="40" id="LJe-kN-Qga"/>
                             <constraint firstItem="QZw-8N-Ocd" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="X7N-eG-qay"/>
                             <constraint firstItem="M3U-5k-WVr" firstAttribute="centerX" secondItem="Hxl-bS-f7E" secondAttribute="centerX" id="fTk-X0-hrU"/>
                             <constraint firstItem="Dt7-vg-vzd" firstAttribute="top" secondItem="QZw-8N-Ocd" secondAttribute="bottom" constant="8" id="vyu-1F-0p3"/>
+                            <constraint firstItem="0Tu-fa-86w" firstAttribute="leading" secondItem="Hxl-bS-f7E" secondAttribute="leading" constant="10" id="yEJ-Eh-bNd"/>
                         </constraints>
                     </view>
                 </viewController>
