@@ -41,8 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Start Screensaver",
                                 action: #selector(startSaver),
                                 keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Pair Phone",
+        menu.addItem(NSMenuItem(title: "Pair Device",
                                 action: #selector(showPairing),
+                                keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Unpair All Devices",
+                                action: #selector(unpairAll),
                                 keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit",
@@ -90,9 +93,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func unpairAll() {
-        let ud = UserDefaults.standard
-        ud.removeObject(forKey: "SocketID")
-        ud.synchronize()
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = "Unpair all devices?"
+        alert.informativeText = "This will disable remote lock from all paired devices."
+        alert.addButton(withTitle: "Cancel")
+        alert.addButton(withTitle: "Unpair")
+        let button = alert.runModal()
+        if button == NSAlertSecondButtonReturn {
+            log.info("Unprairing all devices")
+            let ud = UserDefaults.standard
+            ud.removeObject(forKey: "SocketID")
+            ud.synchronize()
+            showPairing()
+        }
     }
     
     func terminate() {
