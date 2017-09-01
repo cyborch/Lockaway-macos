@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_LockawayVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_LockawayVersionString[];
+FOUNDATION_EXPORT double Pods_MagicLockVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MagicLockVersionString[];
 

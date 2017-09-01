@@ -9,7 +9,8 @@
   },
   "platforms": {
     "ios": "10.0",
-    "osx": "10.11"
+    "osx": "10.11",
+    "watchos": "3.0"
   },
   "source": {
     "git": "https://github.com/cyborch/LockMessage.git",
@@ -24,6 +25,9 @@
   },
   "osx": {
     "source_files": "Maclock/**/*.{h,m}"
+  },
+  "watchos": {
+    "source_files": "Watchlock/**/*.{h,m}"
   },
   "dependencies": {
     "Gloss": [

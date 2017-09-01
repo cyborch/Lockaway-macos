@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3BBEC474882A9A365F68E9F /* Pods_MagicLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5947EC4FC22462CE08AF80 /* Pods_MagicLock.framework */; };
 		D61B90DA1F5882B00094885A /* LockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61B90D91F5882B00094885A /* LockObserver.swift */; };
 		D6239DF21F542D960011C42A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6239DF11F542D960011C42A /* AppDelegate.swift */; };
 		D6239DF61F542D960011C42A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6239DF51F542D960011C42A /* Assets.xcassets */; };
@@ -49,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		437171DF1D419127C7E3906F /* Pods-Lockaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lockaway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway.release.xcconfig"; sourceTree = "<group>"; };
+		501F9322DB7216D197BDF003 /* Pods-MagicLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicLock/Pods-MagicLock.release.xcconfig"; sourceTree = "<group>"; };
+		5B5EEB57E965BBB046BEDE68 /* Pods-MagicLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicLock/Pods-MagicLock.debug.xcconfig"; sourceTree = "<group>"; };
+		8C5947EC4FC22462CE08AF80 /* Pods_MagicLock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicLock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD330956C30D8AC6D8C6DC17 /* Pods-Lockaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lockaway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lockaway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61B90D91F5882B00094885A /* LockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockObserver.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			files = (
 				D67484B91F59423600D0CBD0 /* ServiceManagement.framework in Frameworks */,
 				DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */,
+				A3BBEC474882A9A365F68E9F /* Pods_MagicLock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +115,7 @@
 			children = (
 				D67484B81F59423600D0CBD0 /* ServiceManagement.framework */,
 				B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */,
+				8C5947EC4FC22462CE08AF80 /* Pods_MagicLock.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +125,8 @@
 			children = (
 				AD330956C30D8AC6D8C6DC17 /* Pods-Lockaway.debug.xcconfig */,
 				437171DF1D419127C7E3906F /* Pods-Lockaway.release.xcconfig */,
+				5B5EEB57E965BBB046BEDE68 /* Pods-MagicLock.debug.xcconfig */,
+				501F9322DB7216D197BDF003 /* Pods-MagicLock.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -370,7 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicLock/Pods-MagicLock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A44C34886D6256171CB05886 /* [CP] Embed Pods Frameworks */ = {
@@ -379,7 +387,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MagicLock/Pods-MagicLock-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/LockMessage/LockMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
@@ -396,7 +404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicLock/Pods-MagicLock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD0F295B6FA3679D275437B7 /* [CP] Check Pods Manifest.lock */ = {
@@ -410,7 +418,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Lockaway-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MagicLock-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -575,7 +583,7 @@
 		};
 		D6239DFE1F542D960011C42A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD330956C30D8AC6D8C6DC17 /* Pods-Lockaway.debug.xcconfig */;
+			baseConfigurationReference = 5B5EEB57E965BBB046BEDE68 /* Pods-MagicLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -597,7 +605,7 @@
 		};
 		D6239DFF1F542D960011C42A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 437171DF1D419127C7E3906F /* Pods-Lockaway.release.xcconfig */;
+			baseConfigurationReference = 501F9322DB7216D197BDF003 /* Pods-MagicLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

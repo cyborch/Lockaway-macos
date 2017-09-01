@@ -35,8 +35,15 @@ class SocketDelegate: WebSocketDelegate {
         let log = XCGLogger.default
         log.debug("websocketDidReceiveData: \(String(describing: String(data: data, encoding: .ascii)))")
         
-        if (Message.from(data: data) as? LockMessage) != nil {
+        if let message = Message.from(data: data) as? LockMessage {
             startSaver()
+            let response = ResponseMessage(to: message)
+            log.debug { "Responding with: \(response.toJSON()!)" }
+            if let data = response.toData() {
+                socket.write(data: data)
+            } else {
+                log.error("Could not serialize response: \(response)")
+            }
         }
         
         if let message = Message.from(data: data) as? QueryMessage {
