@@ -40,9 +40,11 @@ class FoundDelegate: NSObject, CBPeripheralDelegate {
         
         let ud = UserDefaults.standard
         var sockets = ud.object(forKey: "SocketID") as? [String] ?? []
-        sockets.append(string)
-        ud.set(sockets, forKey: "SocketID")
-        ud.synchronize()
+        if !sockets.contains(string) {
+            sockets.append(string)
+            ud.set(sockets, forKey: "SocketID")
+            ud.synchronize()
+        }
         
         let delegate = NSApplication.shared().delegate as! AppDelegate
         let service = Service(id: string)
