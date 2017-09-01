@@ -11,16 +11,14 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        var pathComponents = NSString(string: Bundle.main.bundlePath).pathComponents
+        pathComponents.removeLast(4)
+        let path = NSString.path(withComponents: pathComponents)
+        NSWorkspace.shared().launchApplication(path)
+        NSApp.terminate(nil)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
-
-
 }
-

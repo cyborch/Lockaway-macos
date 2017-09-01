@@ -18,6 +18,12 @@
 		D6324AEA1F57665800CD5171 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE81F57665800CD5171 /* Service.swift */; };
 		D6324AEB1F57665800CD5171 /* SocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE91F57665800CD5171 /* SocketDelegate.swift */; };
 		D67484A31F593E1900D0CBD0 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484A21F593E1900D0CBD0 /* BackgroundView.swift */; };
+		D67484AB1F59418D00D0CBD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484AA1F59418D00D0CBD0 /* AppDelegate.swift */; };
+		D67484AD1F59418D00D0CBD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484AC1F59418D00D0CBD0 /* ViewController.swift */; };
+		D67484AF1F59418D00D0CBD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67484AE1F59418D00D0CBD0 /* Assets.xcassets */; };
+		D67484B21F59418D00D0CBD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67484B01F59418D00D0CBD0 /* Main.storyboard */; };
+		D67484B91F59423600D0CBD0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67484B81F59423600D0CBD0 /* ServiceManagement.framework */; };
+		D67484BB1F5942F800D0CBD0 /* Lockaway Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D69926C41F5448530056AE4C /* NSButton+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926C31F5448530056AE4C /* NSButton+Status.swift */; };
 		D69926C71F5448E30056AE4C /* PairDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926C61F5448E30056AE4C /* PairDelegate.swift */; };
 		D69926CD1F5451A20056AE4C /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69926CC1F5451A20056AE4C /* Data+Hex.swift */; };
@@ -28,13 +34,25 @@
 		DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D67484BA1F5942B700D0CBD0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				D67484BB1F5942F800D0CBD0 /* Lockaway Helper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		437171DF1D419127C7E3906F /* Pods-Lockaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lockaway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway.release.xcconfig"; sourceTree = "<group>"; };
 		AD330956C30D8AC6D8C6DC17 /* Pods-Lockaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lockaway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lockaway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61B90D91F5882B00094885A /* LockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockObserver.swift; sourceTree = "<group>"; };
-		D61B90ED1F58BE9C0094885A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "../../Library/Developer/Xcode/DerivedData/Lockaway-fjewcmbvoklltvecdidayrgtbmvu/Build/Products/Debug/RxTest/RxTest.framework"; sourceTree = "<group>"; };
-		D6239DEE1F542D960011C42A /* Lockaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lockaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6239DEE1F542D960011C42A /* Lockaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lockaway.app; path = MagicLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6239DF11F542D960011C42A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6239DF51F542D960011C42A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6239DF81F542D960011C42A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +68,14 @@
 		D6324AE91F57665800CD5171 /* SocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketDelegate.swift; sourceTree = "<group>"; };
 		D67484A11F58D73700D0CBD0 /* Lockaway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lockaway.entitlements; sourceTree = "<group>"; };
 		D67484A21F593E1900D0CBD0 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lockaway Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67484AA1F59418D00D0CBD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D67484AC1F59418D00D0CBD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D67484AE1F59418D00D0CBD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D67484B11F59418D00D0CBD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D67484B31F59418D00D0CBD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D67484B71F5941C800D0CBD0 /* Lockaway Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lockaway Helper.entitlements"; sourceTree = "<group>"; };
+		D67484B81F59423600D0CBD0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		D69926C31F5448530056AE4C /* NSButton+Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+Status.swift"; sourceTree = "<group>"; };
 		D69926C61F5448E30056AE4C /* PairDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairDelegate.swift; sourceTree = "<group>"; };
 		D69926CC1F5451A20056AE4C /* Data+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
@@ -64,7 +90,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67484B91F59423600D0CBD0 /* ServiceManagement.framework in Frameworks */,
 				DDB32D35964AA2154B60960B /* Pods_Lockaway.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67484A51F59418D00D0CBD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +108,7 @@
 		86595A5CB03252E2DA0C3E2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D61B90ED1F58BE9C0094885A /* RxTest.framework */,
+				D67484B81F59423600D0CBD0 /* ServiceManagement.framework */,
 				B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */,
 			);
 			name = Frameworks;
@@ -101,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D6239DF01F542D960011C42A /* Lockaway */,
+				D67484A91F59418D00D0CBD0 /* Lockaway Helper */,
 				D6239DEF1F542D960011C42A /* Products */,
 				C2CFFC516125FE06CDA9F986 /* Pods */,
 				86595A5CB03252E2DA0C3E2B /* Frameworks */,
@@ -111,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D6239DEE1F542D960011C42A /* Lockaway.app */,
+				D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +203,19 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		D67484A91F59418D00D0CBD0 /* Lockaway Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D67484B71F5941C800D0CBD0 /* Lockaway Helper.entitlements */,
+				D67484AA1F59418D00D0CBD0 /* AppDelegate.swift */,
+				D67484AC1F59418D00D0CBD0 /* ViewController.swift */,
+				D67484AE1F59418D00D0CBD0 /* Assets.xcassets */,
+				D67484B01F59418D00D0CBD0 /* Main.storyboard */,
+				D67484B31F59418D00D0CBD0 /* Info.plist */,
+			);
+			path = "Lockaway Helper";
+			sourceTree = "<group>";
+		};
 		D69926C21F5448440056AE4C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,9 +245,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D6239DED1F542D960011C42A /* Lockaway */ = {
+		D6239DED1F542D960011C42A /* MagicLock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6239DFD1F542D960011C42A /* Build configuration list for PBXNativeTarget "Lockaway" */;
+			buildConfigurationList = D6239DFD1F542D960011C42A /* Build configuration list for PBXNativeTarget "MagicLock" */;
 			buildPhases = (
 				CD0F295B6FA3679D275437B7 /* [CP] Check Pods Manifest.lock */,
 				D6239DEA1F542D960011C42A /* Sources */,
@@ -206,14 +255,32 @@
 				D6239DEC1F542D960011C42A /* Resources */,
 				A44C34886D6256171CB05886 /* [CP] Embed Pods Frameworks */,
 				841EC8196CF0ED1A5CD615FD /* [CP] Copy Pods Resources */,
+				D67484BA1F5942B700D0CBD0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Lockaway;
+			name = MagicLock;
 			productName = Lockaway;
 			productReference = D6239DEE1F542D960011C42A /* Lockaway.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D67484A71F59418D00D0CBD0 /* Lockaway Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D67484B41F59418D00D0CBD0 /* Build configuration list for PBXNativeTarget "Lockaway Helper" */;
+			buildPhases = (
+				D67484A41F59418D00D0CBD0 /* Sources */,
+				D67484A51F59418D00D0CBD0 /* Frameworks */,
+				D67484A61F59418D00D0CBD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lockaway Helper";
+			productName = "Lockaway Helper";
+			productReference = D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,6 +304,16 @@
 							};
 						};
 					};
+					D67484A71F59418D00D0CBD0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = T8GF25SAZN;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = D6239DE91F542D960011C42A /* Build configuration list for PBXProject "Lockaway" */;
@@ -252,7 +329,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D6239DED1F542D960011C42A /* Lockaway */,
+				D6239DED1F542D960011C42A /* MagicLock */,
+				D67484A71F59418D00D0CBD0 /* Lockaway Helper */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +343,15 @@
 				D6239DF61F542D960011C42A /* Assets.xcassets in Resources */,
 				D6239E101F542F140011C42A /* Pair.storyboard in Resources */,
 				D6239DF91F542D960011C42A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67484A61F59418D00D0CBD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67484AF1F59418D00D0CBD0 /* Assets.xcassets in Resources */,
+				D67484B21F59418D00D0CBD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +442,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D67484A41F59418D00D0CBD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67484AD1F59418D00D0CBD0 /* ViewController.swift in Sources */,
+				D67484AB1F59418D00D0CBD0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -372,6 +468,14 @@
 				D6239E0F1F542F140011C42A /* Base */,
 			);
 			name = Pair.storyboard;
+			sourceTree = "<group>";
+		};
+		D67484B01F59418D00D0CBD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D67484B11F59418D00D0CBD0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -512,6 +616,44 @@
 			};
 			name = Release;
 		};
+		D67484B51F59418D00D0CBD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lockaway Helper/Lockaway Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = T8GF25SAZN;
+				INFOPLIST_FILE = "Lockaway Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D67484B61F59418D00D0CBD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lockaway Helper/Lockaway Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = T8GF25SAZN;
+				INFOPLIST_FILE = "Lockaway Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -524,11 +666,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D6239DFD1F542D960011C42A /* Build configuration list for PBXNativeTarget "Lockaway" */ = {
+		D6239DFD1F542D960011C42A /* Build configuration list for PBXNativeTarget "MagicLock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D6239DFE1F542D960011C42A /* Debug */,
 				D6239DFF1F542D960011C42A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67484B41F59418D00D0CBD0 /* Build configuration list for PBXNativeTarget "Lockaway Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67484B51F59418D00D0CBD0 /* Debug */,
+				D67484B61F59418D00D0CBD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
