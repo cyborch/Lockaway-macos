@@ -28,7 +28,7 @@ class SocketDelegate: WebSocketDelegate {
     func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
         let log = XCGLogger.default
         log.debug("websocketDidDisconnect")
-        
+        reconnect(socket: socket)
     }
     
     func websocketDidReceiveData(socket: WebSocket, data: Data) {
@@ -84,4 +84,16 @@ class SocketDelegate: WebSocketDelegate {
             powerManager.startSleep()
         }
     }
+    
+    func reconnect(socket: WebSocket) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
+            // If a previous connection attempt suceeded then stop here
+            if !socket.isConnected {
+                socket.connect()
+                // This attempt might timeout in 5 seconds, so automatically retry in 6
+                self.reconnect(socket: socket)
+            }
+        }
+    }
+
 }
