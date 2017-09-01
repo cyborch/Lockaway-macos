@@ -49,9 +49,9 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N4M-KQ-PF7">
-                                <rect key="frame" x="20" y="96" width="458" height="74"/>
+                                <rect key="frame" x="20" y="87" width="458" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="d9a-0y-chq"/>
+                                    <constraint firstAttribute="height" constant="92" id="d9a-0y-chq"/>
                                     <constraint firstAttribute="width" constant="458" id="yus-Wz-vkq"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Settings" id="t9w-bY-AtA"/>
@@ -65,7 +65,7 @@ DQ
                             <constraint firstItem="ShB-YJ-Ae6" firstAttribute="centerX" secondItem="V6N-ch-tr6" secondAttribute="centerX" id="OgP-AX-0hZ"/>
                             <constraint firstItem="N4M-KQ-PF7" firstAttribute="centerX" secondItem="V6N-ch-tr6" secondAttribute="centerX" id="TWr-ZX-CLp"/>
                             <constraint firstItem="xbz-Fa-5Th" firstAttribute="top" secondItem="w2c-Il-gwa" secondAttribute="bottom" constant="22" id="bVN-ab-FyT"/>
-                            <constraint firstItem="N4M-KQ-PF7" firstAttribute="top" secondItem="xbz-Fa-5Th" secondAttribute="bottom" constant="26" id="iff-9P-zZ7"/>
+                            <constraint firstItem="N4M-KQ-PF7" firstAttribute="top" secondItem="xbz-Fa-5Th" secondAttribute="bottom" constant="17" id="iff-9P-zZ7"/>
                             <constraint firstItem="xbz-Fa-5Th" firstAttribute="leading" secondItem="V6N-ch-tr6" secondAttribute="leading" constant="20" id="q8x-p5-hU0"/>
                         </constraints>
                     </view>
