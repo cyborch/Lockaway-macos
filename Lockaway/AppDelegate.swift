@@ -112,10 +112,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func terminate() {
         NSApp.terminate(nil)
     }
-    
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        //unpairAll()
-        log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLevel: .none)
+        #if DEBUG
+            log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLevel: .none)
+        #else
+            log.setup(level: .info, showThreadName: false, showLevel: true, showFileNames: false, showLineNumbers: false, writeToFile: nil, fileLevel: .none)
+        #endif
 
         let ud = UserDefaults.standard
         if ud.object(forKey: "SocketID") == nil {
