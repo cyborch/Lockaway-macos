@@ -46,23 +46,24 @@ class PairDelegate: NSObject, CBCentralManagerDelegate {
     func startScan(manager: CBCentralManager) {
         shouldScan = true
         if manager.state == .poweredOn && !isScanning {
-            print("starting scanning")
+            log.debug("starting scanning")
             manager.scanForPeripherals(withServices: [ConfigurationService], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
             isScanning = true
         }
     }
     
     func stopScan(manager: CBCentralManager) {
+        shouldScan = false
         guard isScanning else { return }
         isScanning = false
-        print("stopping scanning")
+        log.debug("stopping scanning")
         manager.stopScan()
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("state is: \(central.state.rawValue)")
+        log.debug("state is: \(central.state.rawValue)")
         if central.state == .poweredOn && shouldScan && !isScanning {
-            print("starting scanning")
+            log.debug("starting scanning")
             central.scanForPeripherals(withServices: [ConfigurationService], options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
             isScanning = true
         }
@@ -73,7 +74,7 @@ class PairDelegate: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print("discovered: \(String(describing: peripheral.name))")
+        log.debug("discovered: \(String(describing: peripheral.name))")
         showFound(peripheral: peripheral)
         stopScan(manager: central)
     }
