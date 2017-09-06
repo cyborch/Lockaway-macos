@@ -10,7 +10,7 @@
         <scene sceneID="cSY-NK-pnf">
             <objects>
                 <viewController id="x0v-kJ-XnD" sceneMemberID="viewController">
-                    <view key="view" id="V6N-ch-tr6" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
+                    <view key="view" id="V6N-ch-tr6" customClass="BackgroundView" customModule="MagicLock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -27,7 +27,7 @@ DQ
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="71y-Ka-NXb" kind="custom" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="330-Ta-uxy"/>
+                                    <segue destination="71y-Ka-NXb" kind="custom" customClass="FadeSegue" customModule="MagicLock" customModuleProvider="target" id="330-Ta-uxy"/>
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2c-Il-gwa">
@@ -95,8 +95,8 @@ DQ
         <!--Controller-->
         <scene sceneID="dYB-VG-xNe">
             <objects>
-                <viewController title="Pair" id="71y-Ka-NXb" customClass="PairController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="qgX-bI-f3h" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
+                <viewController title="Pair" id="71y-Ka-NXb" customClass="PairController" customModule="MagicLock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="qgX-bI-f3h" customClass="BackgroundView" customModule="MagicLock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -113,7 +113,7 @@ DQ
                                 <constraints>
                                     <constraint firstAttribute="width" constant="458" id="nJd-zz-bKu"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="To lock your Mac directly from your iPhone or Apple Watch, launch the Lockaway mobile app to start pairing your devices." id="9UJ-k9-JRj">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="To lock your Mac directly from your iPhone or Apple Watch, launch the Magic Mac Lock mobile app to start pairing your devices." id="9UJ-k9-JRj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -164,11 +164,11 @@ DQ
                     <connections>
                         <outlet property="delegate" destination="BPY-SJ-9kM" id="VQ7-gi-6zX"/>
                         <outlet property="scanButton" destination="H6e-FL-8Xv" id="JjN-Hm-cw3"/>
-                        <segue destination="rv9-Cu-nS8" kind="custom" identifier="Found" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="EVC-21-rtS"/>
+                        <segue destination="rv9-Cu-nS8" kind="custom" identifier="Found" customClass="FadeSegue" customModule="MagicLock" customModuleProvider="target" id="EVC-21-rtS"/>
                     </connections>
                 </viewController>
                 <customObject id="Z8r-SC-ZHI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="BPY-SJ-9kM" customClass="PairDelegate" customModule="Lockaway" customModuleProvider="target">
+                <customObject id="BPY-SJ-9kM" customClass="PairDelegate" customModule="MagicLock" customModuleProvider="target">
                     <connections>
                         <outlet property="controller" destination="71y-Ka-NXb" id="zLE-5k-qA8"/>
                     </connections>
@@ -180,8 +180,8 @@ DQ
         <scene sceneID="vnV-iv-rns">
             <objects>
                 <customObject id="Dle-Ts-OhL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Pair" id="rv9-Cu-nS8" customClass="FoundController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Vub-1N-5Sc" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
+                <viewController title="Pair" id="rv9-Cu-nS8" customClass="FoundController" customModule="MagicLock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Vub-1N-5Sc" customClass="BackgroundView" customModule="MagicLock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -250,10 +250,10 @@ lock your computer when it isn’t nearby?</string>
                         <outlet property="delegate" destination="6Kb-5w-tyR" id="NpM-tX-Ksy"/>
                         <outlet property="noButton" destination="FD0-8e-qzP" id="58e-rU-Anx"/>
                         <outlet property="question" destination="lof-hr-oOt" id="zhw-iC-a2N"/>
-                        <segue destination="WZo-cl-PWj" kind="custom" identifier="Success" customClass="FadeSegue" customModule="Lockaway" customModuleProvider="target" id="Cby-uj-cZp"/>
+                        <segue destination="WZo-cl-PWj" kind="custom" identifier="Success" customClass="FadeSegue" customModule="MagicLock" customModuleProvider="target" id="Cby-uj-cZp"/>
                     </connections>
                 </viewController>
-                <customObject id="6Kb-5w-tyR" customClass="FoundDelegate" customModule="Lockaway" customModuleProvider="target">
+                <customObject id="6Kb-5w-tyR" customClass="FoundDelegate" customModule="MagicLock" customModuleProvider="target">
                     <connections>
                         <outlet property="controller" destination="rv9-Cu-nS8" id="EQD-5u-njk"/>
                     </connections>
@@ -264,8 +264,8 @@ lock your computer when it isn’t nearby?</string>
         <!--Success Controller-->
         <scene sceneID="t6L-K6-Drc">
             <objects>
-                <viewController id="WZo-cl-PWj" customClass="SuccessController" customModule="Lockaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Hxl-bS-f7E" customClass="BackgroundView" customModule="Lockaway" customModuleProvider="target">
+                <viewController id="WZo-cl-PWj" customClass="SuccessController" customModule="MagicLock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Hxl-bS-f7E" customClass="BackgroundView" customModule="MagicLock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="498" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
