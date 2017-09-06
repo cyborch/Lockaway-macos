@@ -9,6 +9,10 @@
 import Foundation
 import Starscream
 
+
+fileprivate let host = "wss://jsonpipe.cyborch.com"
+//fileprivate let host = "ws://localhost:3000"
+
 class Service {
     
     var socket: WebSocket
@@ -19,7 +23,7 @@ class Service {
     init(id: String) {
         self.id = id
         log.debug("Creating socket /pipe/\(id)")
-        socket = WebSocket(url: URL(string: "wss://jsonpipe.cyborch.com/pipe/\(id)")!)
+        socket = WebSocket(url: URL(string: "\(host)/pipe/\(id)")!)
         socket.headers["Authorization"] = "Token v33gF7yxN6AUka1GjHhC15029130127920E2ZBAONga0PvMTquVkY"
         socket.delegate = delegate
     }

@@ -18,6 +18,7 @@
 		D6239E101F542F140011C42A /* Pair.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6239E0E1F542F140011C42A /* Pair.storyboard */; };
 		D6324AEA1F57665800CD5171 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE81F57665800CD5171 /* Service.swift */; };
 		D6324AEB1F57665800CD5171 /* SocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6324AE91F57665800CD5171 /* SocketDelegate.swift */; };
+		D65626641F5E95EC00B8DE41 /* ProximityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65626631F5E95EC00B8DE41 /* ProximityDelegate.swift */; };
 		D67484A31F593E1900D0CBD0 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484A21F593E1900D0CBD0 /* BackgroundView.swift */; };
 		D67484AB1F59418D00D0CBD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484AA1F59418D00D0CBD0 /* AppDelegate.swift */; };
 		D67484AD1F59418D00D0CBD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67484AC1F59418D00D0CBD0 /* ViewController.swift */; };
@@ -55,7 +56,7 @@
 		AD330956C30D8AC6D8C6DC17 /* Pods-Lockaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lockaway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lockaway/Pods-Lockaway.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CADA8D188C031547D0809F /* Pods_Lockaway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lockaway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61B90D91F5882B00094885A /* LockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockObserver.swift; sourceTree = "<group>"; };
-		D6239DEE1F542D960011C42A /* Lockaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lockaway.app; path = MagicLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6239DEE1F542D960011C42A /* MagicLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6239DF11F542D960011C42A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6239DF51F542D960011C42A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6239DF81F542D960011C42A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		D6239E0F1F542F140011C42A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pair.storyboard; sourceTree = "<group>"; };
 		D6324AE81F57665800CD5171 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D6324AE91F57665800CD5171 /* SocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketDelegate.swift; sourceTree = "<group>"; };
+		D65626631F5E95EC00B8DE41 /* ProximityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityDelegate.swift; sourceTree = "<group>"; };
 		D67484A11F58D73700D0CBD0 /* Lockaway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lockaway.entitlements; sourceTree = "<group>"; };
 		D67484A21F593E1900D0CBD0 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lockaway Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +153,7 @@
 		D6239DEF1F542D960011C42A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D6239DEE1F542D960011C42A /* Lockaway.app */,
+				D6239DEE1F542D960011C42A /* MagicLock.app */,
 				D67484A81F59418D00D0CBD0 /* Lockaway Helper.app */,
 			);
 			name = Products;
@@ -160,6 +162,7 @@
 		D6239DF01F542D960011C42A /* Lockaway */ = {
 			isa = PBXGroup;
 			children = (
+				D65626621F5E959400B8DE41 /* PhoneProximity */,
 				D61B90D81F5882940094885A /* LockState */,
 				D69926C21F5448440056AE4C /* Extensions */,
 				D6324AE71F57664900CD5171 /* Service */,
@@ -207,6 +210,14 @@
 				D6324AE91F57665800CD5171 /* SocketDelegate.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		D65626621F5E959400B8DE41 /* PhoneProximity */ = {
+			isa = PBXGroup;
+			children = (
+				D65626631F5E95EC00B8DE41 /* ProximityDelegate.swift */,
+			);
+			name = PhoneProximity;
 			sourceTree = "<group>";
 		};
 		D67484A91F59418D00D0CBD0 /* Lockaway Helper */ = {
@@ -269,7 +280,7 @@
 			);
 			name = MagicLock;
 			productName = Lockaway;
-			productReference = D6239DEE1F542D960011C42A /* Lockaway.app */;
+			productReference = D6239DEE1F542D960011C42A /* MagicLock.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D67484A71F59418D00D0CBD0 /* Lockaway Helper */ = {
@@ -432,6 +443,7 @@
 			files = (
 				D69926C71F5448E30056AE4C /* PairDelegate.swift in Sources */,
 				D6324AEA1F57665800CD5171 /* Service.swift in Sources */,
+				D65626641F5E95EC00B8DE41 /* ProximityDelegate.swift in Sources */,
 				D69926F61F54A2B40056AE4C /* FoundDelegate.swift in Sources */,
 				D6239E0D1F542F0B0011C42A /* PairView.swift in Sources */,
 				D69926F41F5496F60056AE4C /* FoundController.swift in Sources */,
@@ -591,7 +603,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lockaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -613,7 +625,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lockaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.Lockaway.osx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -27,7 +27,7 @@ class SocketDelegate: WebSocketDelegate {
     
     func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
         let log = XCGLogger.default
-        log.debug("websocketDidDisconnect")
+        log.debug("websocketDidDisconnect, error: \(String(describing: error))")
         reconnect(socket: socket)
     }
     
@@ -64,6 +64,7 @@ class SocketDelegate: WebSocketDelegate {
             log.error("Could not serialize hello message")
             return
         }
+        log.debug("Sending hello message: \(message.toJSON()!)")
         socket.write(data: data)
     }
     

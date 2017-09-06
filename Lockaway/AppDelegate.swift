@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCGLogger
+import CoreBluetooth
 
 let log = XCGLogger.default
 
@@ -59,6 +60,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var powerManager = PowerManager()
 
+    let proximityDelegate = ProximityDelegate()
+    private lazy var proximityManager: CBCentralManager = {
+        let manager = CBCentralManager(delegate: self.proximityDelegate, queue: nil)
+        return manager
+    }()
+
+    
     func showFailed() {
         let alert = NSAlert()
         alert.addButton(withTitle: "OK")
@@ -104,6 +112,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             log.info("Unprairing all devices")
             let ud = UserDefaults.standard
             ud.removeObject(forKey: "SocketID")
+            ud.removeObject(forKey: "Name")
+            ud.removeObject(forKey: "Peripheral")
             ud.synchronize()
             showPairing()
         }
@@ -130,6 +140,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 services.append(service)
             }
         }
+        
+        proximityDelegate.startScan(manager: proximityManager)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
