@@ -17,6 +17,7 @@ class LockObserver {
     }
     
     var state: State = .unlocked
+    var lastUnlockTime = Date()
     
     fileprivate init() {
         DistributedNotificationCenter.default().addObserver(self,
@@ -38,6 +39,7 @@ class LockObserver {
     @objc func didUnlock(_ sender: Any) {
         log.debug("didUnlock")
         state = .unlocked
+        lastUnlockTime = Date()
         sendLockedState()
     }
     
