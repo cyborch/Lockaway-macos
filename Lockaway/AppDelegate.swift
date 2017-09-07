@@ -58,15 +58,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return statusItem
     }()
     
-    var powerManager = PowerManager()
+    let powerManager = PowerManager()
+    let proximityManager = ProximityManager()
 
-    let proximityDelegate = ProximityDelegate()
-    private lazy var proximityManager: CBCentralManager = {
-        let manager = CBCentralManager(delegate: self.proximityDelegate, queue: nil)
-        return manager
-    }()
-
-    
     func showFailed() {
         let alert = NSAlert()
         alert.addButton(withTitle: "OK")
@@ -90,6 +84,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startSaver() {
+        let observer = LockObserver.shared()
+        guard observer.state == .unlocked else { return }
+        let last = -observer.lastUnlockTime.timeIntervalSinceNow
+        guard last > 10 else {
+            log.warning("Attempting lock within 10 seconds (\(last)) of unlock, ignoring")
+            return
+        }
+        log.debug("Time since unlock: \(last)")
         // Use screensaver when available
         if !powerManager.startSaver() {
             // Use system sleep when screensaver isn't available
@@ -141,7 +143,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         
-        proximityDelegate.startScan(manager: proximityManager)
+        proximityManager.startScan()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -35,48 +35,38 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
         }
     }
     
-    private var timer: Timer {
-        get {
-            let timer = Timer(timeInterval: 1, repeats: true, block: { (timer) in
-                self.detectWalkaway()
-            })
-            return timer
-        }
-    }
-    
-    private struct Discovery {
+    struct Discovery {
         var name: String
         var rssi: Int
         var time: Date
     }
     
-    private var discovered: [String: Discovery] = [:]
+    var discovered: [String: Discovery] = [:]
+
+    var timer: Timer!
     
-    private func detectWalkaway() {
+    private func initializeTimer() {
+        timer = Timer(timeInterval: 1, repeats: true, block: { (timer) in
+            self.detectWalkaway()
+        })
+    }
+    
+
+    func detectWalkaway() {
         for id in discovered.keys {
             guard let discovery = discovered[id] else { continue }
             log.verbose("Evaluating \(discovery) for walkaway")
             guard identifiers.contains(id) || names.contains(discovery.name) else { continue }
             if !identifiers.contains(id) { identifiers.append(id) }
             if names.contains(discovery.name) { names = names.filter { $0 != discovery.name } }
-            if discovery.time.timeIntervalSince(Date()) < -5 || discovery.rssi < -90 {
-                log.info("Starting screensaver")
+            let last = Date().timeIntervalSince(discovery.time)
+            log.debug("Time since last discovery is \(last), rssi is \(discovery.rssi)")
+            if last > 10 || discovery.rssi < -90 {
+                log.debug("Time since last discovery is \(Date().timeIntervalSince(discovery.time)), rssi is \(discovery.rssi)")
                 self.startSaver()
                 return
             }
         }
-    }
-    
-    func startSaver() {
-        let delegate = NSApp.delegate as! AppDelegate
-        delegate.startSaver()
-    }
-    
-    func startScan(manager: CBCentralManager) {
-        guard manager.state == .poweredOn else { return }
-        log.debug("starting scanning")
-        manager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
-        RunLoop.main.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -87,5 +77,23 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         guard let name = peripheral.name else { return }
         discovered[peripheral.identifier.uuidString] = Discovery(name: name, rssi: RSSI.intValue, time: Date())
+        log.verbose("Discovered \(discovered[peripheral.identifier.uuidString]!)")
+    }
+
+    func startScan(manager: CBCentralManager) {
+        guard manager.state == .poweredOn else { return }
+        initializeTimer()
+        log.debug("Starting scanning")
+        manager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+        RunLoop.main.add(timer, forMode: .defaultRunLoopMode)
+    }
+    
+    func stopScan() {
+        timer.invalidate()
+    }
+
+    func startSaver() {
+        let delegate = NSApp.delegate as! AppDelegate
+        delegate.startSaver()
     }
 }
