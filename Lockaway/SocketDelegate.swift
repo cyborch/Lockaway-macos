@@ -86,11 +86,8 @@ class SocketDelegate: WebSocketDelegate {
     }
     
     func startSaver() {
-        // Use screensaver when available
-        if !powerManager.startSaver() {
-            // Use system sleep when screensaver isn't available
-            powerManager.startSleep()
-        }
+        let delegate = NSApp.delegate as! AppDelegate
+        delegate.startSaver()
     }
     
     func reconnect(socket: WebSocket) {
