@@ -87,7 +87,7 @@ class SocketDelegate: WebSocketDelegate {
     
     func startSaver() {
         let delegate = NSApp.delegate as! AppDelegate
-        delegate.startSaver()
+        _ = delegate.startSaver()
     }
     
     func reconnect(socket: WebSocket) {

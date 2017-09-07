@@ -83,13 +83,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pair?.window?.orderFrontRegardless()
     }
     
-    func startSaver() {
+    func startSaver() -> Bool {
         let observer = LockObserver.shared()
-        guard observer.state == .unlocked else { return }
+        guard observer.state == .unlocked else { return false }
         let last = -observer.lastUnlockTime.timeIntervalSinceNow
         guard last > 10 else {
             log.warning("Attempting lock within 10 seconds (\(last)) of unlock, ignoring")
-            return
+            return false
         }
         log.debug("Time since unlock: \(last)")
         // Use screensaver when available
@@ -98,8 +98,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if !powerManager.startSleep() {
                 // Show error message when neither is available
                 showFailed()
+                return false
             }
         }
+        return true
     }
     
     func unpairAll() {

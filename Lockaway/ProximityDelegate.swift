@@ -43,7 +43,8 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
     
     var discovered: [String: Discovery] = [:]
 
-    var timer: Timer!
+    private var timer: Timer!
+    private var lastPushTime = Date()
     
     private func initializeTimer() {
         timer = Timer(timeInterval: 1, repeats: true, block: { (timer) in
@@ -94,6 +95,10 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
 
     func startSaver() {
         let delegate = NSApp.delegate as! AppDelegate
-        delegate.startSaver()
+        guard delegate.startSaver() else { return }
+        guard lastPushTime.timeIntervalSinceNow < -10 else { return }
+        log.info("Sending walkaway push to devices")
+        for service in delegate.services { service.push() }
+        lastPushTime = Date()
     }
 }
