@@ -9,7 +9,7 @@
 import Cocoa
 import CoreBluetooth
 
-fileprivate let AppStoreURL = "https://itunes.apple.com/us/app/google-search-made-just-for-mobile/id284815942?mt=8#"
+fileprivate let AppStoreURL = "https://magicmaclock.cyborch.com/iosapp"
 
 class PairController: NSViewController {
 
