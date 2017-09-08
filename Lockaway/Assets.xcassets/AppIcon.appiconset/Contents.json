@@ -3,61 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "Lockaway-16.png",
+      "filename" : "Lockaway-macos-16.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "Lockaway-33.png",
+      "filename" : "Lockaway-macos-33.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "Lockaway-32.png",
+      "filename" : "Lockaway-macos-32.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "Lockaway-64.png",
+      "filename" : "Lockaway-macos-64.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "Lockaway-128.png",
+      "filename" : "Lockaway-macos-128.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "Lockaway-257.png",
+      "filename" : "Lockaway-macos-257.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "Lockaway-256.png",
+      "filename" : "Lockaway-macos-256.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "Lockaway-513.png",
+      "filename" : "Lockaway-macos-513.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "Lockaway-512.png",
+      "filename" : "Lockaway-macos-512.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "Lockaway-1024.png",
+      "filename" : "Lockaway-macos-1024.png",
       "scale" : "2x"
     }
   ],
