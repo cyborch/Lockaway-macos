@@ -127,13 +127,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.terminate(nil)
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func configureLogger() {
         #if DEBUG
             log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLevel: .none)
         #else
-            log.setup(level: .info, showThreadName: false, showLevel: true, showFileNames: false, showLineNumbers: false, writeToFile: nil, fileLevel: .none)
-        #endif
+            let systemDestination = AppleSystemLogDestination(identifier: "advancedLogger.systemDestination")
+            
+            systemDestination.showLogIdentifier = false
+            systemDestination.showLevel = true
+            systemDestination.showDate = true
 
+            #if APPSTORE_RELEASE
+                systemDestination.outputLevel = .info
+                systemDestination.showFunctionName = false
+                systemDestination.showThreadName = false
+                systemDestination.showFileName = false
+                systemDestination.showLineNumber = false
+            #else
+                systemDestination.outputLevel = .debug
+                systemDestination.showFunctionName = true
+                systemDestination.showThreadName = true
+                systemDestination.showFileName = true
+                systemDestination.showLineNumber = true
+            #endif
+            
+            log.add(destination: systemDestination)
+        #endif
+    }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        configureLogger()
         let ud = UserDefaults.standard
         if ud.object(forKey: "SocketID") == nil {
             showPairing()
