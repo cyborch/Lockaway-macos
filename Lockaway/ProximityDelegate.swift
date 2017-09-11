@@ -52,6 +52,21 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
         })
     }
     
+    func discoveriesAreValid() -> Bool {
+        var lastDiscoveryTime = Date.distantPast
+        for id in discovered.keys {
+            guard let discovery = discovered[id] else { continue }
+            lastDiscoveryTime = max(discovery.time, lastDiscoveryTime)
+        }
+        let lastUnlockTime = LockObserver.shared().lastUnlockTime
+        log.warning {
+            if lastDiscoveryTime < lastUnlockTime {
+                return "No discoveries were made since last unlock"
+            }
+            return nil
+        }
+        return lastDiscoveryTime > lastUnlockTime
+    }
 
     func detectWalkaway() {
         for id in discovered.keys {
@@ -63,6 +78,7 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
             let last = Date().timeIntervalSince(discovery.time)
             log.debug("Time since last discovery is \(last), rssi is \(discovery.rssi)")
             if last > 10 || discovery.rssi < -90 {
+                guard discoveriesAreValid() else { continue }
                 log.debug("Time since last discovery is \(Date().timeIntervalSince(discovery.time)), rssi is \(discovery.rssi)")
                 self.startSaver()
                 return
