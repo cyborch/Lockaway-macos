@@ -9,7 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-class ProximityManager {
+class ProximityManager: NSObject, LockObserverDelegate {
 
     private func initializeManager() {
         proximityDelegate = ProximityDelegate()
@@ -19,27 +19,12 @@ class ProximityManager {
     private var proximityDelegate: ProximityDelegate!
     private var centralManager: CBCentralManager!
     
-    init() {
-        DistributedNotificationCenter.default().addObserver(self,
-                                                            selector: #selector(didLock(_:)),
-                                                            name: NSNotification.Name(rawValue: "com.apple.screenIsLocked"),
-                                                            object: nil)
-        DistributedNotificationCenter.default().addObserver(self,
-                                                            selector: #selector(didUnlock(_:)),
-                                                            name: NSNotification.Name(rawValue: "com.apple.screenIsUnlocked"),
-                                                            object: nil)
+    override init() {
+        super.init()
+        LockObserver.shared().observe(delegate: self)
+    }
     }
     
-    @objc func didLock(_ sender: Any) {
-        log.debug("Stopping scan on sleep")
-        stopScan()
-    }
-    
-    @objc func didUnlock(_ sender: Any) {
-        log.debug("Restarting scan after unlock")
-        startScan()
-    }
-
     func stopScan() {
         centralManager.stopScan()
         centralManager.delegate = nil
@@ -50,5 +35,15 @@ class ProximityManager {
         initializeManager()
         proximityDelegate.startScan(manager: centralManager)
     }
+
+    // MARK: - LockObserverDelegate
     
+    func lockedState(didChangeTo state: LockObserver.State) {
+        switch state {
+        case .locked:
+            stopScan()
+        case .unlocked:
+            startScan()
+        }
+    }
 }

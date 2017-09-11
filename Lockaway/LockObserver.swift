@@ -11,11 +11,18 @@ import XCGLogger
 
 fileprivate let observer = LockObserver()
 
+protocol LockObserverDelegate: NSObjectProtocol {
+    func lockedState(didChangeTo state: LockObserver.State)
+}
+
 class LockObserver {
     enum State {
         case locked, unlocked
     }
+
     
+    private var observers = NSHashTable<AnyObject>.weakObjects()
+
     var state: State = .unlocked
     var lastUnlockTime = Date()
     
@@ -33,6 +40,9 @@ class LockObserver {
     @objc func didLock(_ sender: Any) {
         log.debug("didLock")
         state = .locked
+        for observer in observers.allObjects as! [LockObserverDelegate] {
+            observer.lockedState(didChangeTo: state)
+        }
         sendLockedState()
     }
     
@@ -40,11 +50,18 @@ class LockObserver {
         log.debug("didUnlock")
         state = .unlocked
         lastUnlockTime = Date()
+        for observer in observers.allObjects as! [LockObserverDelegate] {
+            observer.lockedState(didChangeTo: state)
+        }
         sendLockedState()
     }
     
     static func shared() -> LockObserver {
         return observer
+    }
+    
+    func observe(delegate: LockObserverDelegate) {
+        observers.add(delegate)
     }
     
     func sendLockedState() {
