@@ -47,8 +47,9 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
     private var lastPushTime = Date()
     
     private func initializeTimer() {
-        timer = Timer(timeInterval: 1, repeats: true, block: { (timer) in
-            self.detectWalkaway()
+        timer = Timer(timeInterval: 1, repeats: true, block: { [weak self] (timer) in
+            guard self != nil else { timer.invalidate() ; return }
+            self?.detectWalkaway()
         })
     }
     
@@ -80,7 +81,7 @@ class ProximityDelegate: NSObject, CBCentralManagerDelegate {
             if last > 10 || discovery.rssi < -90 {
                 guard discoveriesAreValid() else { continue }
                 log.debug("Time since last discovery is \(Date().timeIntervalSince(discovery.time)), rssi is \(discovery.rssi)")
-                self.startSaver()
+                startSaver()
                 return
             }
         }
